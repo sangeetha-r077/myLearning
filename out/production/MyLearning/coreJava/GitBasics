@@ -1,0 +1,52 @@
+Use of Git Commands
+
+to create a new repository via command line :
+echo "# RepoName" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/sangeetha-r077/RepoName.git
+git push -u origin master
+
+push an existing repository via command line : git remote add origin https://github.com/sangeetha-r077/RepoName.git --> git push -u origin master
+
+git pull <get all the changes>
+
+git status <to check the status from any time in git>
+
+git config --global user.name "Provide Username" // to get acknowledge and store the username
+
+git config --global user.email "Provide Email" // for entering the Email
+
+To begin with Git Project :
+
+git init <ProjectName>
+cd <ProjectName>
+
+to add any file :
+git add <fileName>
+git commit -m "Write the Msg here" // -m to help us to write msg
+
+ To check the history use : git.log
+
+To push our local repo to the GitHub server we'll need to add a remote repository:
+git remote add origin <repository URL>
+
+To Push Remotely : git push -u origin <BranchName>
+
+To Pull Remotely : git pull origin <BranchName>
+
+To get the Diff : git diff HEAD
+
+To get the Staged Difference : git diff --staged
+
+For the Branching Out : git branch <BranchName>
+
+For the switching of the BRANCH : git checkout -b <BranchName>
+
+To Remove the Files : git rm 'FileName'
+
+To Merge the Code : git merge <BranchName>
+
+To Delete a Branch : git branch -d <branch name>
+
