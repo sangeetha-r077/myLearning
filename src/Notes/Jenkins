@@ -1,0 +1,16 @@
+What is Jenkins?
+"The leading open source automation server, Jenkins provides
+hundreds of plugins to support building, deploying and
+automating any project." - https://jenkins.io/
+
+CI : A software development practice where contributors are integrating their work very frequently. This results
+     in multiple daily integrations to a mainline. Automated testing (post-commit promotion) is commonly used.
+
+Continuous Delivery : A software development discipline where software is built so that it CAN be released to production at any time.
+
+Continuous Deployment : A software development discipline where software is released continuously as part of an automated pipeline.
+
+ CD vs CI
+ Continuous Delivery is the ability to release at any time.
+ Continuous Integration is just the practice of integrating code continuously. It doesn't necessarily
+     mean that it can or will be released at any time.
