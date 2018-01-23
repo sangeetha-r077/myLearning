@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="WigtWorkflowStateReferrerV1" default="all" basedir="..">
+
+    <!-- ***************************** Set Global Properties for this build ***************************** -->
+
+    <property name="project.root" value=".." />
+    <property name="make.dir" value="${basedir}/make" />
+    <property name="lib.dir" value="${basedir}/lib" />
+    <property name="source.java.dir" value="${basedir}/src/java" />
+    <property name="ear.dir" value="${make.dir}/WigtWorkflowStateReferrerV1" />
+    <property name="war.dir" value="${make.dir}/" />
+    <property name="config.dir" value="${basedir}/config" />
+    <property name="lib" value="${basedir}/lib" />
+    <property name="build" value="${basedir}/build" />
+    <property name="xbeans" value="${basedir}/xbeans" />
+
+    <property name="manifest.class.path" value="javax.persistence_2.0.0.0_2-0.jar WigtWorkflowStateReferrerV1.jar WigtWorkflowSequenceInterceptorInterfaceV1-1.0.jar WigtWorkflowStateReferrerInterfaceV1.jar wigtwfnotifications.jar WigtNotificationInterfaceV1-1.0.jar WigtWorkflowStateReferrerInterfaceV1.jar WigtLoggingServiceInterfaceV1-1.0.jar WigtLogMetadata.jar" />
+    <property name="serviceName" value="WigtWorkflowStateReferrerV1" />
+
+    <property name="jpaJar" value="${lib.dir}/WigtWorkflowStateReferrerV1.jar" />
+    <property name="jpaJarFile" value="WigtWorkflowStateReferrerV1.jar" />
+    <property name="ejbJar" value="${lib.dir}/WigtWorkflowStateReferrerInterfaceV1.jar" />
+    <property name="weblogic.jar" value="C:\wls12130\wlserver\server\lib\weblogic.jar" />
+
+    <!-- ************************************************************************************************ -->
+
+    <!-- ****************************************** Class Path ****************************************** -->
+
+    <path id="build.class.path">
+        <pathelement path="${weblogic.jar}" />
+        <pathelement path="${xbean.jar}" />
+        <pathelement path="${build}/classes" />
+        <pathelement path="${service.xbeans}" />
+        <pathelement path="${compiledWsdl}" />
+        <pathelement path="${ejbJar}" />
+        <pathelement path="${jpaJar}" />
+        <pathelement path="${lib.dir}\WigtWorkflowStateReferrerV1.jar" />
+        <pathelement path="${lib.dir}\WigtNotificationInterfaceV1-1.0.jar" />
+        <pathelement path="${lib.dir}\WigtLoggingServiceInterfaceV1-1.0.jar" />
+        <pathelement path="${lib.dir}\WigtLogMetadata.jar" />
+        <pathelement path="${lib.dir}\WigtWorkflowStateReferrerInterfaceV1.jar" />
+        <pathelement path="${lib.dir}\WigtWorkflowSequenceInterceptorInterfaceV1-1.0.jar" />
+        <pathelement path="${lib.dir}\WigtNotificaton.jar" />
+        <pathelement path="${lib.dir}\javax.persistence_2.0.0.0_2-0.jar" />
+    </path>
+
+    <!-- ************************************************************************************************ -->
+
+    <!-- ******************************************** Targets ******************************************* -->
+
+    <target name="all" depends="ejb,ear" />
+
+    <target name="ejb">
+
+        <delete dir="${build}/common-jar-classes" />
+
+        <mkdir dir="${build}/common-jar-classes" />
+
+        <manifest file="${config.dir}/MANIFEST.MF">
+
+            <attribute name="Built-By" value="${serviceName}" />
+            <attribute name="Created-By" value="Apache ANT 1.6" />
+            <attribute name="Class-Path" value="${manifest.class.path}" />
+
+        </manifest>
+
+        <unzip src="${ejbJar}" dest="${build}/common-jar-classes" />
+
+        <jar jarfile="${ejbJar}" basedir="${build}/common-jar-classes" manifest="${config.dir}/MANIFEST.MF" update="false">
+            <zipfileset dir="${config.dir}/" includes="ejb-jar.xml,weblogic-ejb-jar.xml" prefix="META-INF" />
+        </jar>
+
+    </target>
+
+    <target name="ear">
+
+        <delete dir="${build}/war-classes" />
+        <delete dir="${build}/war-classes/WEB-INF/classes" />
+        <delete dir="${build}/jar-classes" />
+        <delete dir="${ear.dir}/META-INF" />
+        <delete dir="${ear.dir}" />
+
+        <mkdir dir="${ear.dir}" />
+        <mkdir dir="${build}/war-classes" />
+        <mkdir dir="${build}/war-classes/WEB-INF/classes" />
+        <mkdir dir="${build}/jar-classes" />
+        <mkdir dir="${ear.dir}/META-INF" />
+
+        <javac srcdir="${source.java.dir}" destdir="${build}/war-classes/WEB-INF/classes" classpathref="build.class.path" debug="on" />
+        <copy tofile="${build}/war-classes/WEB-INF/web.xml" overwrite="true">
+            <fileset file="${config.dir}/web.xml">
+            </fileset>
+        </copy>
+
+        <move todir="${build}/jar-classes">
+            <fileset dir="${build}/war-classes/WEB-INF/classes" includes="**/*.class" />
+        </move>
+
+        <delete dir="${build.dir}/war-classes/WEB-INF/classes" />
+        <war destfile="${ear.dir}/${serviceName}.war" basedir="${build}/war-classes" manifest="${config.dir}/MANIFEST.MF" webxml="${config.dir}/web.xml" />
+
+        <!--<unwar src="${war.dir}/${serviceName}.war" dest="${build}/war-classes" overwrite="true" />
+        <copydir dest="${build}/war-classes/WEB-INF/" src="${config.dir}/policies" />
+        <copyfile dest="${build}/war-classes/WEB-INF/web.xml" src="${config.dir}/web.xml" forceoverwrite="true" />
+
+        <move todir="${build}/jar-classes">
+            <fileset dir="${build}/war-classes/WEB-INF/classes" includes="**/*.class" />
+        </move>
+        <delete dir="${build}/jar-classes/com/att/wigt/wcws/persistence" />
+        <delete dir="${build.dir}/war-classes/WEB-INF/classes" />
+        <war destfile="${ear.dir}/${serviceName}.war" basedir="${build}/war-classes" manifest="${config.dir}/MANIFEST.MF" webxml="${config.dir}/web.xml" />-->
+
+        <javac srcdir="${source.java.dir}" destdir="${build}/jar-classes" classpathref="build.class.path" debug="on" includes="**/*.java" />
+
+        <copyfile dest="${build}/jar-classes/META-INF/MANIFEST.MF" src="${config.dir}/MANIFEST.MF" />
+        <copy todir="${ear.dir}">
+            <fileset dir="${lib}" includes="*.jar" />
+        </copy>
+
+        <!--	<unzip src="${jpaJar}" dest="${build}/jpa-jar-classes" />
+            <jar destfile="${ear.dir}/${jpaJarFile}" basedir="${build}/jpa-jar-classes" manifest="${config.dir}/MANIFEST.MF">
+            <zipfileset dir="${config.dir}/persist" includes="persistence.xml" prefix="META-INF" />
+            </jar>-->
+
+        <jar destfile="${ear.dir}/${serviceName}.jar" basedir="${build}/jar-classes" manifest="${config.dir}/MANIFEST.MF">
+            <zipfileset dir="${config.dir}/persist" includes="persistence.xml" prefix="META-INF" />
+        </jar>
+        <!--<copy todir="${ear.dir}">
+            <fileset dir="${xbeans}" includes="*.jar" />
+        </copy>-->
+
+        <copy overwrite="true" todir="${ear.dir}/META-INF">
+            <fileset dir="${config.dir}" includes="weblogic-application.xml" />
+        </copy>
+
+        <ear destfile="${ear.dir}/${serviceName}.ear" basedir="${ear.dir}" manifest="${config.dir}/MANIFEST.MF" appxml="${config.dir}/application.xml" update="true" />
+
+    </target>
+
+    <!-- ************************************************************************************************ -->
+
+</project>
