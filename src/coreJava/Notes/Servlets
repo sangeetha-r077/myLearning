@@ -1,0 +1,7 @@
+Servlet technology is used to create web application (resides at server side and generates dynamic web page).
+
+Servlet class is loaded.
+Servlet instance is created.
+init method is invoked.
+service method is invoked.
+destroy method is invoked.

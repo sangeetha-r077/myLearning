@@ -1,0 +1,57 @@
+Features of Java
+Simple,Object-Oriented,Portable,Platform independent,Secured,Robust,Architecture neutral,Dynamic,Interpreted,High Performance,Multithreaded and
+Distributed.
+
+Object-oriented means we organize our software as a combination of different types of objects that incorporates both data and behaviour.
+
+Interanl working of Java : Class file -> Class loader (subsystem in JVM)->  Bytecode verifier -> Interpreter -> Runtime
+
+Difference between : JDK / JRE / JVM
+
+JVM is the abstract Machine provides the specification of the runtime env where the bytecode gets executed.
+
+JRE will provide the Runtime env by implementation of JVM. // basic requirement to run the Java
+
+JDK is the development Kit.
+
+Heap and Stack Memory : heap is the runtime data area where objects are allocated.
+Stack is the where the partial results are stored with the local variables hols acts as frames for the method invocations.
+
+Variable type :
+Local variable : A variable which is declared inside the method is called local variable. Should contain the initialisation of teh variable other wise its a fails to Compile.
+Instance Variable : A variable which is declared inside the class but outside the method, is called instance variable . It is not declared as static.
+Static Variable :A variable that is declared as static is called static variable. It cannot be local.
+
+Casting:
+widening is implicit
+narrowing is the explicit
+
+3 types of For Loop : simple / foreach for (int i : arr)  / enhanced and labelled loop
+
+If you pass true in the while loop, it will be infinitive while loop.
+
+There are 3 types of comments in java.
+
+Single Line Comment //
+Multi Line Comment /**/
+Documentation Comment/** ... */
+
+Any entity that has state and behavior is known as an object.
+Collection of objects is called class. It is a logical entity.
+
+Inheritance : When one object acquires all the properties and behaviours of parent object i.e. known as inheritance.
+              It provides code reusability. It is used to achieve runtime polymorphism.
+
+Polymorphism : When one task is performed by different ways i.e. known as polymorphism. In java, we use method overloading and method overriding to achieve polymorphism.
+
+Abstraction : Hiding internal details and showing functionality is known as abstraction.In java, we use abstract class and interface to achieve abstraction.
+
+Encapsulation : Binding (or wrapping) code and data together into a single unit is known as encapsulation.
+
+The java instanceof operator is used to test whether the object is an instance of the specified type (class or subclass or interface).
+
+he above class is immutable because:
+
+The instance variable of the class is final i.e. we cannot change the value of it after creating an object.
+The class is final so we cannot create the subclass.
+There is no setter methods i.e. we have no option to change the value of the instance variable.
