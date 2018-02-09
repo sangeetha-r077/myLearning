@@ -1,0 +1,77 @@
+Collections in java is a framework that provides an architecture to store and manipulate the group of objects.
+
+Iterable is the super class.
+
+Java ArrayList class uses a dynamic array for storing the elements. It inherits AbstractList class and implements List interface.
+Java ArrayList class can contain duplicate elements.
+Java ArrayList class maintains insertion order.
+Java ArrayList class is non synchronized.
+Java ArrayList allows random access because array works at the index basis.
+In Java ArrayList class, manipulation is slow because a lot of shifting needs to be occurred if any element is removed from the array list.
+
+Java LinkedList class uses doubly linked list to store the elements. It provides a linked-list data structure. It inherits the AbstractList class and implements List and Deque interfaces.
+Java LinkedList class can contain duplicate elements.
+Java LinkedList class maintains insertion order.
+Java LinkedList class is non synchronized.
+In Java LinkedList class, manipulation is fast because no shifting needs to be occurred.
+Java LinkedList class can be used as list, stack or queue.
+
+Java HashSet class is used to create a collection that uses a hash table for storage.
+It inherits the AbstractSet class and implements Set interface.
+HashSet stores the elements by using a mechanism called hashing.
+HashSet contains unique elements only.
+
+Java LinkedHashSet class is a Hash table and Linked list implementation of the set interface.
+It inherits HashSet class and implements Set interface.
+Contains unique elements only like HashSet.
+Provides all optional set operations, and permits null elements.
+Maintains insertion order.
+
+A map contains values on the basis of key i.e. key and value pair. : java.util.HashMap
+Each key and value pair is known as an entry. Map contains only unique keys.
+A HashMap contains values based on the key.
+It contains only unique elements.
+It may have one null key and multiple null values.
+It maintains no order.
+
+
+Java LinkedHashMap class is Hash table and Linked list implementation of the Map interface, with predictable iteration order.
+It inherits HashMap class and implements the Map interface.
+A LinkedHashMap contains values based on the key.
+It contains only unique elements.
+It may have one null key and multiple null values.
+It is same as HashMap instead maintains insertion order.
+
+Java collection class is used exclusively with static methods that operate on or return collections. It inherits Object class.
+
+Java Comparable interface is used to order the objects of user-defined class.
+This interface is found in java.lang package and contains only one method named compareTo(Object).
+It provide single sorting sequence only i.e. you can sort the elements on based on single data member only.
+
+Java Comparator interface is used to order the objects of user-defined class.
+This interface is found in java.util package and contains 2 methods compare(Object obj1,Object obj2) and equals(Object element).
+
+
+Difference between Comparable and Comparator
+Comparable                          ---------- Comparator
+Comparable provides single sorting sequence. ---------- Comparator provides multiple sorting sequence.
+Comparable affects the original class i.e. actual class is modified. -------- Comparator doesn't affect the original class i.e. actual class is not modified.
+Comparable provides compareTo() method to sort elements. ------ Comparator provides compare() method to sort elements.
+ Comparable is found in java.lang package. ------- Comparator is found in java.util package.
+ Uses Collections.sort(List) method ---- Collections.sort(List,Comparator) method.
+
+ Collection
+ The root interface in the collection hierarchy. A collection represents a group of objects, known as its elements. Some collections allow duplicate elements and others do not. Some are ordered and others unordered.
+
+ List
+ An ordered collection (also known as a sequence). The user of this interface has precise control over where in the list each element is inserted. The user can access elements by their integer index (position in the list), and search for elements in the list.
+
+ Set
+ A collection that contains no duplicate elements. More formally, sets contain no pair of elements e1 and e2 such that e1.equals(e2), and at most one null element. As implied by its name, this interface models the mathematical set abstraction.
+
+ Map
+ An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.
+
+ Collection is a top level interface of java collection framework where as Collections is an utility class.
+ Collection is a root level interface of the Java Collection Framework. Most of the classes in Java Collection Framework inherit from this interface. List, Set and Queue are main sub interfaces of this interface.
+ Collections is an utility class in java.util package. It consists of only static methods which are used to operate on objects of type Collection. For example, it has the method to find the maximum element in a collection, it has the method to sort the collection

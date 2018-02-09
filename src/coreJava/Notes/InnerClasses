@@ -1,0 +1,22 @@
+Java inner class or nested class is a class which is declared inside the class or interface.
+We use inner classes to logically group classes and interfaces in one place so that it can be more readable and maintainable
+All the private data members and methods can be accessed.
+
+Two types of the nested class :
+Non-static nested class (inner class)
+    Member inner class : A class created within class and outside method.
+    Anonymous inner class :A class created for implementing interface or extending class. Its name is decided by the java compiler
+    Local inner class : A class created within method.
+Static nested class : A static class created within class.
+
+A class that have no name is known as anonymous inner class in java. It should be used if you have to override method of class or interface.
+Java Anonymous inner class can be created by two ways:
+1)Class (may be abstract or concrete).
+2)Interface.
+
+A static class i.e. created inside a class is called static nested class in java.
+It cannot access non-static data members and methods. It can be accessed by outer class name.
+It can access static data members of outer class including private.
+Static nested class cannot access non-static (instance) data member or method.
+
+An interface i.e. declared within another interface or class is known as nested interface are static implicitly.
