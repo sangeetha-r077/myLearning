@@ -1,0 +1,30 @@
+Constructor in java is a special type of method that is used to initialize the object.
+
+Constructor name must be same as its class name
+Constructor must have no explicit return type.
+
+If there is no constructor in a class, compiler automatically creates a default constructor.
+Default constructor provides the default values to the object like 0, null etc. depending on the type.
+
+Two types of constructors : Default constructor (no-arg constructor) : A constructor that have no parameter is known as default constructor
+                            Parameterized constructor : Parameterized constructor is used to provide different values to the distinct objects
+
+Constructor overloading : depending the parameter list in Java Class.
+
+Constructor can perform the initialization as well as the object creations, Starting the thread, any performs any other actions as the any methods does.
+
+Constructors can we used for copying the values as C++ by
+    i)  By constructor
+    ii) By assigning the values of one object into another
+    ii) By clone() method of Object class
+
+3 Ways to initialize (Initializing object simply means storing data into object) object : " By reference variable, By method, By constructor "
+
+Anonymous simply means nameless. An object which has no reference is known as anonymous object. It can be used at the time of object creation only.
+
+Different ways to create a object :
+By new keyword
+By newInstance() method
+By clone() method
+By deserialization
+By factory method etc

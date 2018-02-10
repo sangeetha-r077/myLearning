@@ -18,7 +18,7 @@ Heap and Stack Memory : heap is the runtime data area where objects are allocate
 Stack is the where the partial results are stored with the local variables hols acts as frames for the method invocations.
 
 Variable type :
-Local variable : A variable which is declared inside the method is called local variable. Should contain the initialisation of teh variable other wise its a fails to Compile.
+Local variable : A variable which is declared inside the method is called local variable. Should contain the initialisation of the variable other wise its a fails to Compile.
 Instance Variable : A variable which is declared inside the class but outside the method, is called instance variable . It is not declared as static.
 Static Variable :A variable that is declared as static is called static variable. It cannot be local.
 
@@ -50,7 +50,7 @@ Encapsulation : Binding (or wrapping) code and data together into a single unit 
 
 The java instanceof operator is used to test whether the object is an instance of the specified type (class or subclass or interface).
 
-he above class is immutable because:
+The above class is immutable because:
 
 The instance variable of the class is final i.e. we cannot change the value of it after creating an object.
 The class is final so we cannot create the subclass.
