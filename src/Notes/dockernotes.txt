@@ -1,0 +1,122 @@
+﻿13.126.199.0
+user1
+user123
+su -
+Acc1234$$
+
+Infrastructure : 
+Convergent {Chef/Puppet/Ansible} / Divergent {Traditional approach}  / Immutatable {Docker/Rocket}
+(Infrastructure As Code) 
+
+HyperVisor manages the mutliple VM's such as delete / create / update machines (eg Tool : VMWare) 
+
+In Linux, Kernel + Containers ( before then ) 
+NameSpace : different  components (CPU, Memory etc.,) C-Groups: How much of the resources can be allocated.
+
+Introduction of Engine. 
+File System : eg. Linux 
+Union File System : AUFS ..../Layered FS  .../Device Manager
+Layered FS uses to 3 layers
+3 layers : Mount acts as Union , Upper Dir - Writable Layer (CopyTo) , Lower Dir as Readable
+Currently uses LayeredFS2
+
+Docker Arch: 
+
+Docker Client/CLI : Instruction from CLI
+Docker Deamon = HyperVisor : Services in (windows term) ---> REST API  
+
+WF :
+Writing a script : Build 
+with the help of Image and use the mutliple Image Instances aka Containers : Run 
+Pull
+with the help of Image
+Mutliple Image Instances aka Containers
+
+Code ---> Build ---> Search --> Run --> Deploy
+
+Images are immutable in Docker
+
+CLI:
+apt-get update (to get the list of softwares) 
+apt-get install -y docker.io
+docker // to find the list of help command 
+docker info // to get the info of the container storage etc 
+docker search <args> // to get the image of specified tool
+docker ps -all // to see all the containers
+docker ps // for running containers
+docker images // to see the existing images
+docker run hello-world // to run any image 
+docker rm <id> // remove the container
+docker rmi <id> // remove the images
+
+
+CaseStudies for Hello-World : 
+docker run hello-world // everytime run command is used creates the container 
+docker images 
+docker ps -all 
+
+Case Study 1 Ubuntu latest :
+docker pull ubuntu:latest //to download the image
+
+Case Study 2 httpd 
+docker serach httpd
+docker run -d --name <Name> <tool> // detached mode
+docker run -d --name <Unique Name> -P <tool> // gets the dynamic IP
+docker run -d --name httpsample2 -p 3000:80 httpd // to specify the port 
+
+Case Study 3 : 
+
+To create the image 
+docker login 
+docker push sang77/myimage 
+docker stop <container_id>
+docker kill <container_id>
+
+Case Study 4 : Volume By BusyBox
+docker run -it --name myvolsample -v /folder busybox // to make a folder during run 
+docker  rm myvolsample 
+cd / 
+mkdir testdb
+cd testdb
+touch samplelab.txt
+ls 
+docker -it --name myvolsample -v /testdb:/data busybox
+
+Case Study 5 : Running the java app in tomcat
+setting up tomcat 
+docker run -d -p 3000:8080 --name tomcat5 tomcat
+
+creating java package : 
+docker run --rm --it maven mvn --version
+
+docker run --rm -it -v $(pwd):/projectfolder
+-w /projfolder maven mvn archetype:generate
+
+CaseStudy 5 : Install Jenkins 
+docker run -d --name file_name -p 4000:8080 jenkins
+docker exec file_name cat /var/jenkins_home/secrets/initialAdminPassword
+
+
+Day 2  : Coding using DSL
+
+YAML 
+Inside Dockerfile : Writing script ---> Build ---> image is generated ---> into containers
+FROM
+RUN
+CMD
+ENTRYPOINT
+COPY/ADD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
