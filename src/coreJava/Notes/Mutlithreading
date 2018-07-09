@@ -1,0 +1,50 @@
+Multithreading in java is a process of executing multiple threads simultaneously.
+Thread is basically a lightweight sub-process, a smallest unit of processing.
+Multiprocessing and multithreading, both are used to achieve multitasking.
+
+A thread can be in one of the five states.
+According to sun, there is only 4 states in thread life cycle in java new, runnable, non-runnable and terminated.
+
+New : thread is in new state if you create an instance of Thread class but before the invocation of start() method.
+Runnable : thread is in runnable state after invocation of start() method, but the thread scheduler has not selected it to be the running thread.
+Running : thread is in running state if the thread scheduler has selected it.
+Non-Runnable (Blocked) : This is the state when the thread is still alive, but is currently not eligible to run.
+Terminated : A thread is in terminated or dead state when its run() method exits.
+
+Creation of the threads by the thread method() and by the runnable interface by creating thread as a object. //create Thread class object.
+
+Thread scheduler in java is the part of the JVM that decides which thread should run.
+
+Under preemptive scheduling:
+the highest priority task executes until it enters the waiting or dead states or a higher priority task comes into existence.
+
+Under time slicing:
+a task executes for a predefined slice of time and then reenters the pool of ready tasks. The scheduler then determines which task should execute next, based on priority and other factors.
+
+Can we start a thread twice ??
+No. After starting a thread, it can never be started again. If you does so, an IllegalThreadStateException is thrown.
+In such case, thread will run once but for second time, it will throw exception.
+
+The join() method waits for a thread to die.
+In other words, it causes the currently running threads to stop executing until the thread it joins with completes its task.
+
+Thread class there are the 3 constants :
+MIN_PRIORITY (value is 1)
+NORM_PRIORITY (value is 5)
+MAX_PRIORITY (value is 10)
+
+Daemon thread in java is a service provider thread that provides services to the user thread.
+Its life depend on the mercy of user threads i.e. when all the user threads dies, JVM terminates this thread automatically.
+
+In java, garbage means unreferenced objects.
+Garbage Collection is process of reclaiming the runtime unused memory automatically.
+In other words, it is a way to destroy the unused objects.
+
+There are many ways where we can object be unreferenced.:
+
+By nulling the reference
+By assigning a reference to another
+By annonymous object etc.
+
+The finalize() method is invoked each time before the object is garbage collected. This method can be used to perform cleanup processing.
+The gc() method is used to invoke the garbage collector to perform cleanup processing. The gc() is found in System and Runtime classes.

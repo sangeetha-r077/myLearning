@@ -1,0 +1,21 @@
+For the Few MISC commands or info :
+
+Linux command : which java < progran_name> to find the version of it .
+To transfer from the local to remote server : scp <filename> user@your-server:/<server_path>
+To install : rpm -Uvh jdk-8u121-linux-x64.rpm (eg for Java).
+Set up Alternatives for Java: alternatives --install /usr/bin/java java /usr/java/latest/bin/java 200000
+                              alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 200000
+                              alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 200000
+                              alternatives --set java /usr/java/latest/bin/java (|||ly for others).
+
+To Set the Java_Home : export JAVA_HOME=GivePath
+                       export PATH=$JAVA_HOME/bin
+To find the JAVA Process running : env | grep JAVA
+
+Small info : open Jdk is the for the global env and instance jdk i.e., for user is by the changing the bash_profile version of it .
+
+To check if any program is running on certain port :netstat -tulpn | grep <port_#>
+
+To check on the all files : ls -al <path>
+
+wget to download , yum is to install/remove/update/list/etc any softwares; rpm is similar to yum but an alternative 3rd party package

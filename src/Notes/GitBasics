@@ -1,8 +1,12 @@
 Use of Git Commands
+2 ways to get git into it ... git clone / git init 
+
+git log -p ( all the transcations) 
+git log --author/--grep "text to be checked for"
 
 to create a new repository via command line :
 echo "# RepoName" >> README.md
-git init
+git init .
 git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/sangeetha-r077/RepoName.git

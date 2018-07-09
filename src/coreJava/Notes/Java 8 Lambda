@@ -1,0 +1,37 @@
+Functions are always a part of the Java class not as standalone function.
+To pass the argument and perform the action // can be switch case
+In Java 7 : create the Interface which will pass teh instance of the interface to the calling class for diff kind of implementation.
+In Java 8 : Create the entities which are functions which dont not belong to a class / method
+Functions as Values :
+Assigning the block of code to a variable .
+
+
+how to write the lambda experssion :
+
+public which needs to known to the class
+As in java8 the we are writing this as a function in isolation hence , its modifier is redundant.
+
+Variable name : (not needed)
+
+Return type is the been justified by the compiler. eg : return 5 ; return int right !!
+
+Eg : aBlockOfCode = public void perform(){ System.out.println("java 8 ")};
+      aBlockOfCode = () //Function InLine -> { System.out.println("java 8 ")};
+
+      <Type> addFunction = public int add(int a , int b)
+      {
+      return(a+b);
+      }
+      addFunction = (int a , int b) -> a+b;
+
+Difference between Lambda and Interface Implementation :
+Not the actual implementation  similarly to anonymous inner class
+
+
+For Lambda usage : Interface with one method .
+
+Type Inference Example :
+
+Type inference is a Java compiler's ability to look at each method invocation and corresponding declaration to determine the type argument (or arguments) that make the invocation applicable.
+Finally, the inference algorithm tries to find the most specific type that works with all of the arguments.
+
