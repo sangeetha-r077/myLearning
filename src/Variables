@@ -1,0 +1,30 @@
+Scope of the Variable is the section of the program in which variables are visible
+It is on compile time. ( No need to worry on scope level bugs as it will be handled during compile time itself)
+
+Class-level variables, also known as fields, are declared inside a class and outside any
+methods. // Instance Variable :  It is not declared as static
+
+Modifier Class Package Subclass World
+public Y Y Y Y
+protected Y Y Y N
+no modifier Y Y N N
+private Y N N N
+
+Method-level scope
+- Variables declared inside a method, also known as local variables, are scoped to the
+method and cannot be accessed from outside the method.
+- A method-scoped variable only exists since its declaration until the method returns.
+- A local variable cannot be defined with "static" keyword.
+
+Block-level scope
+- A pair of curly brackets defines a scope.
+- A variable can only be accessed since its declaration until the closing bracket. It is
+inaccessible to the code outside the block. 
+
+Static variable
+
+A variable which is declared as static is called static variable. 
+It cannot be local.
+You can create a single copy of static variable and share among all the instances of the class. 
+Memory allocation for static variable happens only once when the class is loaded in the memory.
+

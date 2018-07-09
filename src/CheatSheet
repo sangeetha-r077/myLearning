@@ -1,0 +1,9 @@
+Variables : 
+
+Check for the scope of the variable and also make sure the variables should be declared before the calling of the same.
+Also Note down on the same two variable names should not same else it returns compile time error.
+
+Class Declaration :
+The scope of the default constructor is the same as for the class modifier.
+
+ 

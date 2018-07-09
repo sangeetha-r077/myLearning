@@ -1,0 +1,18 @@
+Class Declarartion:
+Modifiers such as public / private
+The Class *** keyword
+The Class name *** (with the capital letter)
+The Class body {} ***
+
+Class can extends the Super class
+Class can implements the comma separated interface.
+
+*** : means required
+
+Eg : 
+public class MyClass extends MySuperClass implements MyInterface
+{
+//fields :
+//Methods:
+//Constructors :
+}
