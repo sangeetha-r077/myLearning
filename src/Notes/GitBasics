@@ -1,3 +1,9 @@
+Download the Git https://git-scm.com/downloads 
+
+This is version control systsem
+
+To check on the version: git --version
+To unistall : ./uninstall.sh
 Use of Git Commands
 2 ways to get git into it ... git clone / git init 
 
