@@ -83,5 +83,17 @@ git switch -c <new-branch-name> or git branch <new name> <hash#>
 To rename the branch : git branch -m <old> <new name>
 to remove a branch: git branch -d <filename>
 
+md: is it markdown language
+
+.gitignore file will not track the files 
+
+package.json : for the dependecies download
+
+git branch -a : to see all teh branches
+
+to get the previous template repo : git clone -b <branch_name> <clone_url>
+
+to get ride of everything in git logs / git folder: rm -dfr .git
+
 
 
